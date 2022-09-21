@@ -7,38 +7,155 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/playlist_wrap"
+        android:layout_height="100dp"
+        android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         >
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
+        <ImageView
+            android:id="@+id/playlist_image"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_launcher_background" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/playlist_meta"
+            android:layout_toEndOf="@+id/playlist_image"
+            android:layout_toRightOf="@+id/playlist_image"
+            >
+            <TextView
+                android:id="@+id/playlist_title"
                 android:layout_width="match_parent"
+                android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
-                android:gravity="left">
-                <ImageView
-                    android:id="@+id/songLogo"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@color/material_dynamic_neutral80"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignLeft="@+id/songLogo"
-                    android:text="Song Title"
-                    />
-
-            </RelativeLayout>
-        </ScrollView>
+                android:text="Playlist Name"
+                android:textSize="50sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="playlist_artists"
+                android:textSize="16sp"
+                android:layout_below="@+id/playlist_title"
+                />
+        </RelativeLayout>
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/playlist_wrap"
+        android:layout_marginTop="50dp"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src ="@drawable/ic_launcher_background"
+                android:id="@+id/playlist_logo"
+                android:layout_centerVertical="true"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/song_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src ="@drawable/ic_launcher_background"
+                        android:id="@+id/songLogo"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/song_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/songLogo"
+                        android:layout_toRightOf="@+id/songLogo"
+                        android:text="Song Title"/>
+
+                    <TextView
+                        android:id="@+id/song_artist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/songLogo"
+                        android:layout_toRightOf="@+id/songLogo"
+                        android:text="Song Artist"
+                        android:textSize="10sp"
+                        android:layout_below="@+id/song_title"/>
+
+
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ControlBar"
+        android:layout_height="110dp"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/ic_launcher_background"
+        >
+        <TextView
+            android:id="@+id/song_active_meta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:layout_centerHorizontal="true"
+            android:text="Song Title - Song Artist"
+            />
+        <RelativeLayout
+            android:id="@+id/controls"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="bottom"
+            >
+            <Button
+                android:id="@+id/control_play"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:text="p"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/black"
+                />
+            <Button
+                android:id="@+id/control_forward"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/control_play"
+                android:text=">"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/black"
+                />
+            <Button
+                android:id="@+id/control_backward"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toLeftOf="@+id/control_play"
+                android:text="<"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/black"
+                />
+        </RelativeLayout>
+        </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
