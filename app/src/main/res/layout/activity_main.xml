@@ -13,6 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="#B0202C"
         >
 
         <ImageView
@@ -20,7 +21,8 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_launcher_background" />
+            android:layout_marginRight="10dp"
+            android:src="@drawable/sentimental" />
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,21 +30,25 @@
             android:layout_toEndOf="@+id/playlist_image"
             android:layout_toRightOf="@+id/playlist_image"
             >
+
             <TextView
                 android:id="@+id/playlist_title"
                 android:layout_width="match_parent"
-                android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
-                android:text="Playlist Name"
-                android:textSize="50sp"
-                />
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/louisgeorge_bold"
+                android:text="Sentimental"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="playlist_artists"
-                android:textSize="16sp"
                 android:layout_below="@+id/playlist_title"
-                />
+                android:paddingTop="10dp"
+                android:text="Juicy Luicy"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
         </RelativeLayout>
 
     </RelativeLayout>
@@ -64,24 +70,28 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src ="@drawable/ic_launcher_background"
+                android:src ="#B0202C"
                 android:id="@+id/playlist_logo"
                 android:layout_centerVertical="true"/>
+
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp">
 
                 <RelativeLayout
                     android:id="@+id/song_item"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/material_dynamic_neutral95">
 
                     <ImageView
+                        android:id="@+id/songLogo"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src ="@drawable/ic_launcher_background"
-                        android:id="@+id/songLogo"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/tampar" />
 
                     <TextView
                         android:id="@+id/song_title"
@@ -89,17 +99,17 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@+id/songLogo"
                         android:layout_toRightOf="@+id/songLogo"
-                        android:text="Song Title"/>
+                        android:text="Tampar" />
 
                     <TextView
                         android:id="@+id/song_artist"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@+id/song_title"
                         android:layout_toEndOf="@+id/songLogo"
                         android:layout_toRightOf="@+id/songLogo"
-                        android:text="Song Artist"
-                        android:textSize="10sp"
-                        android:layout_below="@+id/song_title"/>
+                        android:text="Juicy Luicy"
+                        android:textSize="10sp" />
 
 
                 </RelativeLayout>
@@ -108,52 +118,72 @@
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/ControlBar"
-        android:layout_height="110dp"
+        android:layout_height="130dp"
         android:layout_width="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/ic_launcher_background"
+        android:background="#B0202C"
         >
         <TextView
             android:id="@+id/song_active_meta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="top"
+            android:paddingTop="10dp"
             android:layout_centerHorizontal="true"
-            android:text="Song Title - Song Artist"
+            android:text="Tampar - Juicy Luicy"
+            android:textColor="@color/white"
+            android:fontFamily="@font/louisgeorge_regular"
             />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_width="350dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:layout_below="@+id/song_active_meta"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"/>
         <RelativeLayout
             android:id="@+id/controls"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:gravity="bottom"
-            >
+            android:layout_below="@+id/progress_bar">
+
             <Button
                 android:id="@+id/control_play"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
-                android:text="p"
-                android:layout_margin="5dp"
-                android:backgroundTint="@color/black"
-                />
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/control_play"
+                android:backgroundTint="@color/white" />
+
             <Button
                 android:id="@+id/control_forward"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:layout_toRightOf="@+id/control_play"
-                android:text=">"
-                android:layout_margin="5dp"
-                android:backgroundTint="@color/black"
-                />
+                android:background="@drawable/control_forward"
+                android:backgroundTint="@color/black" />
+
             <Button
                 android:id="@+id/control_backward"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:layout_toLeftOf="@+id/control_play"
-                android:text="<"
-                android:layout_margin="5dp"
-                android:backgroundTint="@color/black"
-                />
+                android:background="@drawable/control_backward"
+                android:backgroundTint="@color/black" />
         </RelativeLayout>
         </RelativeLayout>
 
