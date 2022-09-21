@@ -82,8 +82,7 @@
                 <RelativeLayout
                     android:id="@+id/song_item"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/material_dynamic_neutral95">
+                    android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/songLogo"
@@ -171,7 +170,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_toRightOf="@+id/control_play"
                 android:background="@drawable/control_forward"
-                android:backgroundTint="@color/black" />
+                android:backgroundTint="@color/white" />
 
             <Button
                 android:id="@+id/control_backward"
@@ -183,7 +182,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_toLeftOf="@+id/control_play"
                 android:background="@drawable/control_backward"
-                android:backgroundTint="@color/black" />
+                android:backgroundTint="@color/white" />
         </RelativeLayout>
         </RelativeLayout>
 
