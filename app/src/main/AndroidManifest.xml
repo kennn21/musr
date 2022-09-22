@@ -19,7 +19,7 @@
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:label="Splash">
+            android:label="Musr">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +32,5 @@
 
 
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 </manifest>
