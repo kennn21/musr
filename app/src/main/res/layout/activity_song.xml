@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <RelativeLayout
+       android:id="@+id/video_wrapper"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       >
+       <VideoView
+           android:id="@+id/video_sample"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"/>
+
+   </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ControlBar"
+        android:layout_height="130dp"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#B0202C"
+        >
+        <TextView
+            android:id="@+id/song_active_meta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:paddingTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="Tampar - Juicy Luicy"
+            android:textColor="@color/white"
+            android:fontFamily="@font/louisgeorge_regular"
+            />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_width="350dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            android:layout_below="@+id/song_active_meta"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"/>
+        <RelativeLayout
+            android:id="@+id/controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:layout_below="@+id/progress_bar">
+
+            <Button
+                android:id="@+id/control_play"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/control_play"
+                android:backgroundTint="@color/white" />
+
+            <Button
+                android:id="@+id/control_forward"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/control_play"
+                android:background="@drawable/control_forward"
+                android:backgroundTint="@color/white" />
+
+            <Button
+                android:id="@+id/control_backward"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toLeftOf="@+id/control_play"
+                android:background="@drawable/control_backward"
+                android:backgroundTint="@color/white" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

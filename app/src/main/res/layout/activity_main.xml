@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:src="@drawable/sentimental" />
+            android:src="@drawable/sentimental"/>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,12 +52,44 @@
         </RelativeLayout>
 
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/search_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/playlist_wrap"
+        app:layout_constraintBottom_toTopOf="@+id/SongList">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/search_bar"
+            android:background="@drawable/search"
+            android:backgroundTint="?android:textColorPrimary"
+
+            />
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="300dp"
+            android:layout_centerVertical="true"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="top"
+            android:hint="hint"
+            android:inputType="text" />
+
+    </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/SongList"
+
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        app:layout_constraintTop_toBottomOf="@+id/playlist_wrap"
-        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/search_wrapper"
+        android:layout_marginTop="20dp"
         >
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -79,16 +111,20 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp">
 
+
+
                 <RelativeLayout
                     android:id="@+id/song_item"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="?android:textColorSecondary"
+                    android:descendantFocusability="blocksDescendants"
+                    >
 
                     <ImageView
                         android:id="@+id/songLogo"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:layout_centerVertical="true"
                         android:layout_marginRight="10dp"
                         android:src="@drawable/tampar" />
 
@@ -109,10 +145,9 @@
                         android:layout_toRightOf="@+id/songLogo"
                         android:text="Juicy Luicy"
                         android:textSize="10sp" />
-
-
                 </RelativeLayout>
             </ScrollView>
+
         </RelativeLayout>
     </RelativeLayout>
     <RelativeLayout
@@ -158,7 +193,9 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/control_play"
-                android:backgroundTint="@color/white" />
+                android:backgroundTint="@color/white"
+                android:enabled="true"
+                android:clickable="true"/>
 
             <Button
                 android:id="@+id/control_forward"
@@ -170,7 +207,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_toRightOf="@+id/control_play"
                 android:background="@drawable/control_forward"
-                android:backgroundTint="@color/white" />
+                android:backgroundTint="@color/white"/>
 
             <Button
                 android:id="@+id/control_backward"
@@ -185,6 +222,5 @@
                 android:backgroundTint="@color/white" />
         </RelativeLayout>
         </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
