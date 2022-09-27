@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val songClick = findViewById<RelativeLayout>(R.id.song_item)
         songClick.setOnClickListener{
-            Toast.makeText(this, "Button Clicked",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Song Activity",Toast.LENGTH_SHORT).show()
             var Intent = Intent(this, SongActivity::class.java)
             startActivity(Intent)
         }
