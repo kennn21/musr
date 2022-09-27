@@ -1,7 +1,9 @@
 package com.example.musr.data.remote
 
-import com.google.firebase.firestore.FirebaseFirestore
+import com.example.musr.data.entities.Song
 import com.example.musr.other.Constants.SONG_COLLECTION
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.tasks.await
 
 class MusicDatabase {
 
@@ -11,6 +13,8 @@ class MusicDatabase {
     suspend fun getAllSongs(): List<Song> {
         return try{
             songCollection.get().await().toObjects(Song::class.java)
+        } catch(e: Exception){
+            emptyList()
         }
     }
 }
